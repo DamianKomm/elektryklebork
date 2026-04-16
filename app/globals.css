@@ -1,26 +1,184 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050816;
+  --foreground: #f8fafc;
+  --muted: #94a3b8;
+  --line: rgba(255, 255, 255, 0.1);
+  --accent: #f59e0b;
+  --accent-strong: #fbbf24;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top left, rgba(245, 158, 11, 0.06), transparent 28%),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.05), transparent 22%),
+    linear-gradient(180deg, #050816 0%, #060918 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-feature-settings:
+    "rlig" 1,
+    "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: rgba(245, 158, 11, 0.22);
+  color: #fff;
+}
+
+a,
+button,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary {
+  list-style: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070b18;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.35), rgba(255, 255, 255, 0.14));
+  border: 2px solid #070b18;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(251, 191, 36, 0.5), rgba(255, 255, 255, 0.18));
+}
+
+/* Fokusy */
+:focus-visible {
+  outline: 2px solid rgba(245, 158, 11, 0.9);
+  outline-offset: 3px;
+  border-radius: 14px;
+}
+
+/* Delikatne podbicie typografii */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+/* Subtelne stany interakcji */
+a,
+button,
+details,
+summary {
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease,
+    box-shadow 180ms ease;
+}
+
+/* Lekki premium polish dla FAQ */
+details[open] {
+  border-color: rgba(245, 158, 11, 0.2);
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.035));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+details[open] summary {
+  color: #fff;
+}
+
+/* Delikatna poprawa czytelności sekcji */
+section {
+  position: relative;
+}
+
+/* Telefoniczne CTA – lepszy feeling kliknięcia */
+a[href^="tel:"] {
+  will-change: transform;
+}
+
+a[href^="tel:"]:hover {
+  box-shadow:
+    0 10px 30px rgba(245, 158, 11, 0.18),
+    0 0 0 1px rgba(245, 158, 11, 0.12) inset;
+}
+
+a[href^="tel:"]:active {
+  transform: translateY(1px) scale(0.995);
+}
+
+/* Bardziej miękkie linie na małych ekranach */
+@media (max-width: 640px) {
+  :focus-visible {
+    outline-offset: 2px;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(245, 158, 11, 0.06), transparent 24%),
+      linear-gradient(180deg, #050816 0%, #060918 100%);
+  }
 }
