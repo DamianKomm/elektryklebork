@@ -13,7 +13,7 @@ const warningSigns = [
 const services = [
 	{
 		title: 'Usuwanie awarii',
-		text: 'Szybkie sprawdzenie problemu i konkretne działanie przy usterkach instalacji elektrycznej.',
+		text: 'Szybkie sprawdzenie problemu i konkretna pomoc przy usterkach instalacji elektrycznej.',
 	},
 	{
 		title: 'Naprawa instalacji',
@@ -29,30 +29,11 @@ const services = [
 	},
 	{
 		title: 'Wymiana osprzętu',
-		text: 'Wymiana zużytych gniazdek, włączników i elementów instalacji na nowe i estetyczne.',
+		text: 'Wymiana zużytych gniazdek, włączników i elementów instalacji na nowe.',
 	},
 	{
 		title: 'Modernizacja instalacji',
 		text: 'Uporządkowanie i odświeżenie instalacji w domu, mieszkaniu lub lokalu.',
-	},
-]
-
-const reasons = [
-	{
-		title: 'Szybki kontakt',
-		text: 'Ta strona jest zrobiona pod telefon i pilne zgłoszenia. Minimum klików, maksimum konkretu.',
-	},
-	{
-		title: 'Lokalnie',
-		text: 'Lębork i okolice. Krótsza ścieżka kontaktu i prostsze ustalenie dalszych kroków.',
-	},
-	{
-		title: 'Jasne ustalenia',
-		text: 'Bez rozwlekania. Najpierw problem, potem rozwiązanie i ustalenie terminu.',
-	},
-	{
-		title: 'Dla domu i lokalu',
-		text: 'Awarie, naprawy i prace instalacyjne dla mieszkań, domów i małych firm.',
 	},
 ]
 
@@ -168,7 +149,7 @@ export default function Page() {
 		name: 'Elektryk Lębork',
 		areaServed: 'Lębork i okolice',
 		telephone: '+48 794 164 707',
-		url: '',
+		url: 'https://www.elektryklebork.online',
 		description:
 			'Szybka pomoc przy awariach i instalacjach elektrycznych w Lęborku i okolicy.',
 	}
@@ -225,7 +206,7 @@ export default function Page() {
 				</header>
 
 				<section id="top" className="relative border-b border-white/10">
-					<div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
+					<div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-24">
 						<div className="relative">
 							<div className="mb-7 inline-flex items-center rounded-full border border-amber-500/20 bg-amber-500/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-amber-300">
 								Szybka pomoc • Lębork i okolice
@@ -294,8 +275,8 @@ export default function Page() {
 											{PHONE_DISPLAY}
 										</a>
 										<p className="mt-4 max-w-sm text-sm leading-7 text-slate-300">
-											Najszybsza droga przy awarii. Krótki opis problemu i od
-											razu przejście do ustaleń.
+											Zadzwoń i krótko opisz problem. To najszybsza droga do
+											ustalenia dalszych kroków.
 										</p>
 									</div>
 
@@ -318,10 +299,6 @@ export default function Page() {
 											</div>
 										))}
 									</div>
-
-									<PhoneButton className="mt-6 flex min-h-[72px] w-full text-base sm:text-lg">
-										Zadzwoń teraz
-									</PhoneButton>
 								</div>
 							</div>
 						</div>
@@ -333,8 +310,8 @@ export default function Page() {
 						<div>
 							<SectionIntro
 								label="Objawy awarii"
-								title="Są sytuacje, w których najlepiej dzwonić od razu"
-								text="Ta sekcja nie ma opowiadać marki. Ma pomóc klientowi szybko rozpoznać, że to moment na kontakt."
+								title="Kiedy warto zadzwonić"
+								text="Jeśli instalacja działa niestabilnie, coś wybija albo pojawia się zapach spalenizny, najlepiej reagować od razu."
 							/>
 
 							<div className="mt-8 rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 sm:p-8">
@@ -363,14 +340,9 @@ export default function Page() {
 									W pilnych sprawach telefon działa najlepiej
 								</h3>
 								<p className="mt-5 max-w-lg text-sm leading-7 text-slate-200">
-									Zamiast długiego formularza i czekania na odpowiedź, tutaj
-									priorytetem jest szybki kontakt. Opisz problem i przejdź od
-									razu do konkretów.
+									Zadzwoń, opisz usterkę lub zakres prac i przejdź od razu do
+									ustalenia dalszych kroków.
 								</p>
-
-								<PhoneButton className="mt-8 min-h-[80px] w-full text-lg">
-									Zadzwoń — {PHONE_DISPLAY}
-								</PhoneButton>
 
 								<div className="mt-6 grid gap-3 sm:grid-cols-3">
 									{['Lębork', 'Awarie', 'Instalacje'].map((item) => (
@@ -394,8 +366,8 @@ export default function Page() {
 					<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 						<SectionIntro
 							label="Usługi"
-							title="Najczęściej szukane prace"
-							text="Krótka lista, bez rozbudowanego katalogu. Tylko to, czego klienci faktycznie szukają na szybkim landingu."
+							title="Najczęściej realizowane prace"
+							text="Awarie, naprawy i podstawowe prace instalacyjne dla domu, mieszkania i lokalu."
 						/>
 
 						<div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -417,120 +389,6 @@ export default function Page() {
 								</article>
 							))}
 						</div>
-
-						<div className="mt-10 rounded-[2rem] border border-white/10 bg-[linear-gradient(90deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] p-6 sm:p-8">
-							<div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-								<div className="max-w-2xl">
-									<p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-amber-300">
-										Telefon przy awarii
-									</p>
-									<h3 className="mt-3 text-2xl font-semibold text-white sm:text-3xl">
-										Masz problem z instalacją? Nie komplikuj kontaktu.
-									</h3>
-									<p className="mt-3 text-sm leading-7 text-slate-300">
-										W tym układzie strona ma prowadzić do telefonu, nie do
-										długiego czytania.
-									</p>
-								</div>
-
-								<PhoneButton className="min-h-[76px] shrink-0 px-8 text-base sm:text-lg">
-									Zadzwoń teraz
-								</PhoneButton>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section
-					id="dlaczego-my"
-					className="border-b border-white/10 py-16 sm:py-20 lg:py-24"
-				>
-					<div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-						<div>
-							<SectionIntro
-								label="Dlaczego ten układ działa"
-								title="Mniej opowieści. Więcej decyzji o kontakcie."
-								text="Industrial premium, ale bez przeładowania. Ma wyglądać lepiej niż typowy landing AI i dalej sprzedawać telefon."
-							/>
-
-							<div className="mt-8 space-y-4">
-								{[
-									'Mocny numer telefonu nad foldem',
-									'Czytelna ścieżka do kontaktu',
-									'Lokalność i pilny charakter usługi',
-								].map((item) => (
-									<div
-										key={item}
-										className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-sm font-medium text-slate-200"
-									>
-										{item}
-									</div>
-								))}
-							</div>
-						</div>
-
-						<div className="grid gap-5 sm:grid-cols-2">
-							{reasons.map((item) => (
-								<div
-									key={item.title}
-									className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6"
-								>
-									<div className="mb-5 h-12 w-12 rounded-2xl border border-amber-500/20 bg-amber-500/10" />
-									<h3 className="text-xl font-semibold text-white">
-										{item.title}
-									</h3>
-									<p className="mt-4 text-sm leading-7 text-slate-300">
-										{item.text}
-									</p>
-								</div>
-							))}
-						</div>
-					</div>
-				</section>
-
-				<section className="border-b border-white/10 py-16 sm:py-20 lg:py-24">
-					<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-						<SectionIntro
-							label="Jak to działa"
-							title="Prosto, szybko, bez zbędnych kroków"
-							text="Ta część buduje zaufanie bez sztucznych opinii. Klient ma od razu rozumieć, czego się spodziewać."
-							align="center"
-						/>
-
-						<div className="mt-10 grid gap-5 md:grid-cols-3">
-							{[
-								{
-									step: '01',
-									title: 'Telefon',
-									text: 'Klient dzwoni i krótko opisuje problem albo zakres prac.',
-								},
-								{
-									step: '02',
-									title: 'Ustalenie',
-									text: 'Szybko ustalane są dalsze kroki, dostępność i zakres pomocy.',
-								},
-								{
-									step: '03',
-									title: 'Realizacja',
-									text: 'Priorytetem jest sprawne działanie i jasna komunikacja.',
-								},
-							].map((item) => (
-								<div
-									key={item.step}
-									className="rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] p-6"
-								>
-									<p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-amber-300">
-										{item.step}
-									</p>
-									<h3 className="mt-4 text-2xl font-semibold text-white">
-										{item.title}
-									</h3>
-									<p className="mt-4 text-sm leading-7 text-slate-300">
-										{item.text}
-									</p>
-								</div>
-							))}
-						</div>
 					</div>
 				</section>
 
@@ -542,7 +400,7 @@ export default function Page() {
 						<SectionIntro
 							label="FAQ"
 							title="Najważniejsze pytania"
-							text="Krótko, czytelnie i bez rozwlekania."
+							text="Krótko i konkretnie."
 							align="center"
 						/>
 
@@ -623,17 +481,11 @@ export default function Page() {
 				</section>
 
 				<footer className="border-t border-white/10 py-6">
-					<div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 text-center text-sm text-slate-400 sm:px-6 lg:px-8">
+					<div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 pb-24 text-center text-sm text-slate-400 sm:px-6 sm:pb-6 lg:px-8">
 						<p>Elektryk Lębork</p>
 						<p>Telefon: {PHONE_DISPLAY}</p>
 					</div>
 				</footer>
-
-				<div className="fixed bottom-5 right-5 z-50 hidden lg:block">
-					<PhoneButton className="min-h-[72px] px-8 text-base">
-						Zadzwoń — {PHONE_DISPLAY}
-					</PhoneButton>
-				</div>
 
 				<div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#050816]/95 p-3 backdrop-blur-xl sm:hidden">
 					<PhoneButton className="min-h-[74px] w-full text-base">
